@@ -52,7 +52,7 @@ public class BaseClass {
             case "edge" : driver = new EdgeDriver();
             break;
             default: System.out.println("Invalid browser");
-            return; // here return will exit from 'browserSetup' and below code will not get executed, Note:-if we use break here then it will only exit from switch case.
+            return; // here return will exit from 'browserSetup' method and below code will not get executed, Note:-if we use break here then it will only exit from switch case.
         }
 
         driver.manage().deleteAllCookies(); // It is used to delete all cookies from the webpage
@@ -100,7 +100,7 @@ public class BaseClass {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
-        String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
+        String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";  //to maintain history of screenshot
         File targetFile=new File(targetFilePath);
 
         sourceFile.renameTo(targetFile);

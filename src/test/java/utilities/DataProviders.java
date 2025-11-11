@@ -3,6 +3,7 @@ package utilities;
 import java.io.IOException;
 
 import org.testng.annotations.DataProvider;
+import testCases.BaseClass;
 
 public class DataProviders {
 
@@ -11,7 +12,7 @@ public class DataProviders {
     @DataProvider(name="LoginData")  //for every data provider we have to create a separate method with unique name(ie- name="LoginData)
     public String [][] getData() throws IOException
     {
-        String path=".\\testData\\LoginData.xlsx";  //taking xl file from testData
+        String path=".\\testData\\LoginData.xlsx";  //path of Excel file available on testData folder
 
         ExcelUtility xlutil=new ExcelUtility(path);//creating an object for XLUtility
 

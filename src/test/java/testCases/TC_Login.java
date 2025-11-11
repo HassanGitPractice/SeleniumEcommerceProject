@@ -11,7 +11,6 @@ import java.time.Duration;
 
 public class TC_Login extends BaseClass {
 
-
     @Test(groups = "Sanity")
     void loginToApplication()
     {

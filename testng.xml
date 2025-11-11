@@ -15,12 +15,12 @@
 
     <test verbose="2" preserve-order="true" name="executing on edge">
 <!--        <parameter name="os" value="windows"/>-->
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="firefox"/>
 <!--        <parameter name="browser" value="${browsers}"/>  // used when it take browser data from config.properties file -->
         <classes>
-            <class name="testCases.TC_LoginDataDrivenTesting">
+            <class name="testCases.TC_Products">
                 <methods>
-                    <include name="verify_loginDDT"/>
+                    <include name="verifySearchProductFunctionality"/>
                 </methods>
             </class>
         </classes>

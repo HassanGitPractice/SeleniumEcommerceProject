@@ -10,7 +10,8 @@ public class HomePage extends BasePage{
     {
         super(driver);
     }  //constructor
-    BasePage common = new BasePage(driver);
+
+    BasePage common = new BasePage(driver);// creating object of Base class to access its methods.
     @FindBy(linkText = "Signup / Login")
     WebElement logIn;
 
@@ -44,7 +45,6 @@ public class HomePage extends BasePage{
             common.waitForElementTOVisible(logoHomePage, 10);
             return (logoHomePage.isDisplayed());
     }
-
 
     public void clickOnLogout()
     {

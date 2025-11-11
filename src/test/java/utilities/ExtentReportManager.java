@@ -41,9 +41,9 @@ public class ExtentReportManager implements ITestListener {
 		String currentdatetimestamp=df.format(dt);
 		*/
 
-        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp is used to generate unique report name every time and to maintain the history of reports
         repName = "Test-Report-" + timeStamp + ".html";
-        sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName);// specify location of the report
+        sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName);// specify location of the report folder
 
         sparkReporter.config().setDocumentTitle("opencart Automation Report"); // Title of report
         sparkReporter.config().setReportName("opencart Functional Testing"); // name of the report
@@ -102,8 +102,9 @@ public class ExtentReportManager implements ITestListener {
 
     public void onFinish(ITestContext testContext) {
 
-        extent.flush();
+        extent.flush(); //flush() method instructs ExtentReports to write or update all collected test information to the configured reporter(s).
 
+        // open that report in the default web browser.
         String pathOfExtentReport = System.getProperty("user.dir")+"\\reports\\"+repName;
         File extentReport = new File(pathOfExtentReport);
 
