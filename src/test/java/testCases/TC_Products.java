@@ -18,6 +18,7 @@ public class TC_Products extends BaseClass {
         logger.info("Clicked on product search button");
         product.verifySearchProducts();
         logger.info("All searched result verified");
+        System.out.println("Merge conflict demo-1");
         System.out.println("Merge conflict demo-2");
     }
 }
